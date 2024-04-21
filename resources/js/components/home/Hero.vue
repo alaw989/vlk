@@ -5,8 +5,9 @@
             Your browser does not support the video tag.
         </video>
         <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="flex flex-col absolute z-10">
-            <h1 class="text-[48px] text-white my-[100px] text-center font-bold">What Do I Put Here, Darcel?</h1>
+        <div class="flex flex-col absolute z-10 items-center">
+            <h1 class="text-[48px] text-white  text-center font-bold">Welcome to VibeLinkCreate!</h1>
+            <p class="mb-[50px] w-full max-w-[600px] text-center text-white">Hey there, fellow creatives! Ready to dive into a world where imagination knows no bounds? Welcome to VibeLinkCreate, your ultimate destination for all things creative and captivating! #VibesForCreatives</p>
             <div class="flex justify-center">
                 <ul class="flex justify-between w-full">
                     <li class="py-8 px-6 text-white bg-[#3eb488] text-center rounded-sm max-w-[400px] mx-2">
