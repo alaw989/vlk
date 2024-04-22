@@ -9,5 +9,9 @@ class Page extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'body'];
+    protected $fillable = ['name', 'slug', 'body', 'is_homepage', 'info_squares'];
+
+    protected $casts = [
+        'info_squares' => 'json'
+    ];
 }

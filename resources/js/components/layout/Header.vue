@@ -10,9 +10,10 @@
                     </a>
                 </div>
                 <ul class="w-3/4 flex justify-end list-none">
-                    <li v-for="(page, pageIndex) in pages" :key="pageIndex" :class="hover ? 'text-black' : 'text-white'"
-                        class="mx-8 text-white cursor-pointer">{{ page.name }}
+                    <li  class="text-white cursor-pointer" v-for="(page, pageIndex) in pages">
+                        <a :href="page?.slug"   :class="hover ? 'text-black' : 'text-white'" class="mx-8 text-bal"  :key="pageIndex">{{ page.name }} </a>
                     </li>
+
                 </ul>
             </div>
         </div>

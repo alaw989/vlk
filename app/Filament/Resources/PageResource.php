@@ -4,8 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
-use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,13 +24,32 @@ class PageResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('name')->label('Name')->required(),
-                Forms\Components\TextInput::make('slug')->label('Slug')->required(),
-                Forms\Components\Textarea::make('body')->label('Body')->required(),
-                // Add more fields if needed
-            ]);
+        $form = $form->schema([
+
+            Checkbox::make('is_homepage')->label('Is Homepage?')
+                ->live(),
+
+            Repeater::make('info_squares')->label('Section - Info Squares')
+                ->schema([
+                    TextInput::make('item')->required(),
+                    Textarea::make('text')
+                        ->required(),
+                ])
+
+                ->columnSpan(2)
+                ->hidden(fn (Get $get) => $get('is_homepage') == false),
+
+            TextInput::make('name')->label('Name')->required(),
+            TextInput::make('slug')->label('Slug')->required(),
+            Textarea::make('body')->label('Body')->required(),
+            // Add more fields if needed
+
+
+        ])->columns(2);
+
+
+
+        return $form;
     }
 
     public static function table(Table $table): Table
