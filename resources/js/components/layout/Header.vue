@@ -6,12 +6,13 @@
             <div class="flex items-center justify-between h-full px-5 sm:px-10 max-w-">
                 <div class="w-1/4">
                     <a href="">
-                        <img class="max-w-[250px] cursor-pointer" :src="imageUrl" alt="Example Image">
+                        <img class="hidden xl:block max-w-[250px] cursor-pointer" :src="imageUrl" alt="Example Image">
                     </a>
                 </div>
                 <ul class="w-3/4 flex justify-end list-none">
-                    <li  class="text-white cursor-pointer" v-for="(page, pageIndex) in pages">
-                        <a :href="page?.slug"   :class="hover ? 'text-black' : 'text-white'" class="mx-8 text-bal"  :key="pageIndex">{{ page.name }} </a>
+                    <li class="text-white cursor-pointer" v-for="(page, pageIndex) in pages">
+                        <a :href="page?.slug" :class="hover ? 'text-black' : 'text-white'" class="hidden xl:flex mx-2 2xl:mx-4"
+                           :key="pageIndex">{{ page.name }} </a>
                     </li>
 
                 </ul>
@@ -36,7 +37,7 @@ export default {
         axios.get('/pages')
             .then(response => {
                 this.pages = response.data
-                console.log(this.pages)
+
             })
             .catch(error => {
                 console.error('Error ', error);

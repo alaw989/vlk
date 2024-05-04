@@ -1,63 +1,63 @@
 <template>
     <div class="w-full flex justify-center">
         <div class="w-full max-w-[75%]">
-            <div class="flex justify-center flex-col items-center text-center mb-6">
-                <h1 class="text-4xl font-bold mb-4">Ready To Make Some Waves?</h1>
-                <p class="max-w-[800px] text-center">Here at VibeLinkCreate, our mission is simple yet powerful: to
-                    empower
-                    creatives like you to unleash your full potential. We believe in fostering a supportive,
-                    inclusive community where everyone feels welcome to explore, experiment, and express themselves
-                    freely. Together, let's spark creativity, forge connections, and make magic happen!</p>
-            </div>
+            <!-- Your existing content -->
             <div class="flex justify-center flex-col items-center relative">
                 <div class="flex">
+                    <!-- List of items -->
                     <ul class="text-left flex flex-col justify-center w-[25%]">
-                        <li class="cursor-pointer">See Pricing</li>
-                        <li class="cursor-pointer">Book a Session</li>
-                        <li class="cursor-pointer">Sign Up For Classes</li>
-                        <li class="cursor-pointer">Contact Us</li>
+                        <li class="cursor-pointer mb-6 uppercase text-[#3eb488] font-bold tracking-wide" v-for="(home, index) in home.info_squares" :key="index"
+                            @click="showDiv(index)">
+                            {{ home.item }}
+                        </li>
                     </ul>
                     <div class="flex pr-[150px]">
                         <img :src="imageUrl" alt="">
                     </div>
                 </div>
 
-                <div class="flex absolute top-[225px] right-[300px]">
-                    <div class="box bg-white absolute w-[300px] h-[200px] shadow-md">
-                        See Pricing
-                    </div>
-                    <div class="box bg-white absolute w-[300px] h-[200px] shadow-md">
-                        Book a Session
-                    </div>
-                    <div class="box bg-white absolute w-[300px] h-[200px] shadow-md">
-                        Sign Up for Classes
-                    </div>
-                    <div class="box bg-white absolute w-[300px] h-[200px] shadow-md">
-                        Contact Us
+                <!-- Divs to be shown based on selection -->
+                <div class="flex absolute top-[150px] right-[500px]">
+                    <div v-for="(home, index) in home.info_squares" :key="index" v-show="selectedHomeIndex === index"
+                         class="box bg-white absolute w-[500px] shadow-md p-10 flex flex-col justify-center">
+                        <div class="text-2xl font-bold pb-4">
+                            {{ home.item }}
+                        </div>
+                        <div class="text-lg">
+                            {{ home.text }}
+                        </div>
+                        <div>
+                            <button class="text-white px-4 py-2 mt-6 rounded-full bg-[#3eb488]">Learn More</button>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
-
     </div>
-
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
     name: "InfoSquares",
-    props: ['home'],
+    props: {
+        home: {
+            type: Object,
+            required: true
+        }
+    },
     data() {
         return {
-            imageUrl: '/images/office-1.jpg'
+            imageUrl: '/images/office-1.jpg',
+            selectedHomeIndex: 0 // To keep track of the selected index
         }
     },
     mounted() {
-        console.log(this.home)
+        console.log('homes', this.home.info_squares)
+    },
+    methods: {
+        showDiv(index) {
+            this.selectedHomeIndex = index; // Update the selected index
+        }
     }
 }
 </script>

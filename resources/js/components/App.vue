@@ -7,11 +7,11 @@
         <FiftyFifty/>
     </div>
     <div class="relative my-[6rem]">
-        <BgParagraph />
+        <BgParagraph/>
     </div>
-      <div class="relative my-[6rem]">
-          <InfoSquares :homepage="home" />
-      </div>
+    <div class="relative my-[6rem]">
+        <InfoSquares :home="home"/>
+    </div>
 </template>
 
 <script>
@@ -33,22 +33,19 @@ export default {
     },
     data() {
         return {
-            home : ''
+            home: '',
         }
     },
     mounted() {
         axios.get('/pages')
             .then(response => {
                 this.pages = response.data;
-                console.log(this.pages);
 
                 // Find the page with slug '/'
                 const homepage = this.pages.find(page => page.slug === '/');
+
                 if (homepage) {
                     this.home = homepage
-                    console.log("Homepage found:", homepage);
-                } else {
-                    console.log("Homepage not found");
                 }
             })
             .catch(error => {

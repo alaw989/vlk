@@ -1,13 +1,13 @@
 <template>
     <ul>
         <li class="w-full flex justify-center mb-[6rem]">
-            <ul class="flex justify-center w-full max-w-[75%]">
-                <li class="w-1/2">
-                    <img :src="imageUrl" alt="Value Image" class="w-full rounded-md h-auto w-[600px]">
+            <ul class="flex flex-col lg:flex-row justify-center w-full max-w-[75%]">
+                <li class="w-full lg:w-[1-2]">
+                    <img :src="imageUrl" alt="Value Image" class="w-full rounded-md h-auto lg:w-[600px]">
                 </li>
                 <li class="w-[20px]"></li>
-                <li class="w-1/2 flex flex-col pl-20">
-                    <div class="px-5 flex flex-col h-full justify-center">
+                <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
+                    <div class="lg:px-5 flex flex-col h-full justify-center">
                         <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
                             workplaces support teams of all sizes and stages — from startups to Fortune 500s. And
@@ -23,12 +23,12 @@
         </li>
 
         <li class="w-full flex justify-center mb-[6rem]">
-            <ul class="flex flex-row-reverse justify-center w-full max-w-[75%]">
-                <li class="w-1/2">
-                    <img :src="imageUrl" alt="Value Image" class="w-full h-auto w-[600px] rounded-md">
+            <ul class="flex flex-col lg:flex-row-reverse justify-center w-full max-w-[75%]">
+                <li class="w-full lg:w-[1-2]">
+                    <img :src="imageUrl" alt="Value Image" class="w-full rounded-md h-auto lg:w-[600px]">
                 </li>
                 <li class="w-[20px]"></li>
-                <li class="w-1/2 flex flex-col pr-20">
+                <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
                     <div class="flex flex-col h-full justify-center">
                         <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
@@ -44,14 +44,14 @@
             </ul>
         </li>
 
-        <li class="w-full flex justify-center">
-            <ul class="flex justify-center w-full max-w-[75%]">
-                <li class="w-1/2 ">
-                    <img :src="imageUrl" alt="Value Image" class="rounded-md w-full h-auto w-[600px]">
+        <li class="w-full flex justify-center mb-[6rem]">
+            <ul class="flex flex-col lg:flex-row justify-center w-full max-w-[75%]">
+                <li class="w-full lg:w-[1-2]">
+                    <img :src="imageUrl" alt="Value Image" class="w-full rounded-md h-auto lg:w-[600px]">
                 </li>
                 <li class="w-[20px]"></li>
-                <li class="w-1/2 flex flex-col pl-20">
-                    <div class="px-5 flex flex-col h-full justify-center">
+                <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
+                    <div class="lg:px-5 flex flex-col h-full justify-center">
                         <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
                             workplaces support teams of all sizes and stages — from startups to Fortune 500s. And
