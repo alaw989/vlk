@@ -8,7 +8,7 @@
                 <li class="w-[20px]"></li>
                 <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
                     <div class="lg:px-5 flex flex-col h-full justify-center">
-                        <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
+                        <h1 class="text-2xl font-bold mb-4 mt-6 lg:mt-0">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
                             workplaces support teams of all sizes and stages — from startups to Fortune 500s. And
                             thanks to our flexible terms, it's easy to adapt your space as your business
@@ -28,9 +28,9 @@
                     <img :src="imageUrl" alt="Value Image" class="w-full rounded-md h-auto lg:w-[600px]">
                 </li>
                 <li class="w-[20px]"></li>
-                <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
+                <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pr-20">
                     <div class="flex flex-col h-full justify-center">
-                        <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
+                        <h1 class="text-2xl font-bold mb-4 mt-6 lg:mt-0">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
                             workplaces support teams of all sizes and stages — from startups to Fortune 500s. And
                             thanks to our flexible terms, it's easy to adapt your space as your business
@@ -52,7 +52,7 @@
                 <li class="w-[20px]"></li>
                 <li class="w-full lg:w-[1/2] flex flex-col p-0 lg:pl-20">
                     <div class="lg:px-5 flex flex-col h-full justify-center">
-                        <h1 class="text-2xl font-bold mb-4">Success is the space you work in</h1>
+                        <h1 class="text-2xl font-bold mb-4 mt-6 lg:mt-0">Success is the space you work in</h1>
                         <p class="text-lg">Thoroughly professional and thoughtfully designed, our flexible
                             workplaces support teams of all sizes and stages — from startups to Fortune 500s. And
                             thanks to our flexible terms, it's easy to adapt your space as your business
