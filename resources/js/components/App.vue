@@ -12,6 +12,9 @@
     <div class="relative my-[6rem]">
         <InfoSquares :home="home"/>
     </div>
+    <div class="relative mt-[6rem] ">
+        <Footer :pages="pages"/>
+    </div>
 </template>
 
 <script>
@@ -21,6 +24,7 @@ import Hero from "./home/Hero.vue";
 import FiftyFifty from "./home/FiftyFifty.vue";
 import BgParagraph from "./home/BgParagraph.vue";
 import InfoSquares from "./home/InfoSquares.vue";
+import Footer from "./layout/Footer.vue";
 import axios from "axios";
 
 export default {
@@ -29,11 +33,13 @@ export default {
         BgParagraph,
         Header,
         Hero,
-        FiftyFifty
+        FiftyFifty,
+        Footer
     },
     data() {
         return {
             home: '',
+            pages: ''
         }
     },
     mounted() {

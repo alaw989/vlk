@@ -18,9 +18,10 @@
                 </div>
 
                 <!-- Divs to be shown based on selection -->
-                <div class="flex w-full justify-center mt-[-25px] lg:absolute lg:bottom-[30px] lg:top-[150px] lg:right-[-250px] ">
+                <div
+                    class="flex w-full justify-center mt-[-25px] lg:absolute lg:bottom-[30px] lg:top-[150px] lg:right-[-250px] ">
                     <div v-for="(home, index) in home.info_squares" :key="index" v-show="selectedHomeIndex === index"
-                         class="box lg:w-[500px] bg-white absolute w-[95%] lg:w-[200px] shadow-md p-10 flex flex-col justify-center">
+                         class="box lg:w-[500px] bg-white lg:absolute w-[95%] lg:w-[200px] shadow-md p-10 flex flex-col justify-center">
                         <div class="text-2xl font-bold pb-4">
                             {{ home.item }}
                         </div>
@@ -28,7 +29,9 @@
                             {{ home.text }}
                         </div>
                         <div>
-                            <button class="text-white text-md lg:text-lg px-4 py-2 mt-6 rounded-full bg-[#3eb488]">Learn More</button>
+                            <button class="text-white text-md lg:text-lg px-4 py-2 mt-6 rounded-full bg-[#3eb488]">Learn
+                                More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -60,7 +63,7 @@ export default {
         }
     },
     mounted() {
-        console.log('homes', this.home.info_squares)
+
     },
     computed: {
         imageUrl() {
