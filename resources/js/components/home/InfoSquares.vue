@@ -12,16 +12,16 @@
                             {{ home.item }}
                         </li>
                     </ul>
-                    <div class="flex lg:pr-[150px] w-full lg:w-[95%]">
+                    <div class="flex lg:pr-[150px] w-full lg:w-[95%] lg:max-w-[900px] lg:max-h-[550px]">
                         <img :src="imageUrl" alt="">
                     </div>
                 </div>
 
                 <!-- Divs to be shown based on selection -->
                 <div
-                    class="flex w-full justify-center mt-[-25px] lg:absolute lg:bottom-[30px] lg:top-[150px] lg:right-[-250px] ">
+                    class="flex  justify-center mt-[-25px] lg:absolute lg:bottom-[30px] lg:top-[150px] lg:right-[200px] ">
                     <div v-for="(home, index) in home.info_squares" :key="index" v-show="selectedHomeIndex === index"
-                         class="box lg:w-[500px] bg-white lg:absolute w-[95%] lg:w-[200px] shadow-md p-10 flex flex-col justify-center">
+                         class="box lg:w-[500px]  bg-white lg:absolute w-[95%] lg:w-[200px] shadow-md p-10 flex flex-col justify-center">
                         <div class="text-2xl font-bold pb-4">
                             {{ home.item }}
                         </div>

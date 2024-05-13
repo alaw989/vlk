@@ -144,7 +144,7 @@ export default {
         }
     },
     mounted() {
-        console.log('pageds', this.pages)
+
     }
 }
 </script>

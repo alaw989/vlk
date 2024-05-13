@@ -1,20 +1,26 @@
 <template>
-    <div class="relative h-dvh">
-        <Header/>
-        <Hero/>
+    <div v-if="onHomePage">
+        <div class="relative h-dvh">
+            <Header @emitPageName="handlePageClick" />
+            <Hero/>
+        </div>
+        <div class="relative my-[6rem]">
+            <FiftyFifty/>
+        </div>
+        <div class="relative my-[6rem]">
+            <BgParagraph/>
+        </div>
+        <div class="relative my-[6rem]">
+            <InfoSquares :home="home"/>
+        </div>
+        <div class="relative mt-[6rem] ">
+            <Footer :pages="pages"/>
+        </div>
     </div>
-    <div class="relative my-[6rem]">
-        <FiftyFifty/>
+    <div v-if="!onHomePage">
+        <Internal></Internal>
     </div>
-    <div class="relative my-[6rem]">
-        <BgParagraph/>
-    </div>
-    <div class="relative my-[6rem]">
-        <InfoSquares :home="home"/>
-    </div>
-    <div class="relative mt-[6rem] ">
-        <Footer :pages="pages"/>
-    </div>
+
 </template>
 
 <script>
@@ -26,6 +32,7 @@ import BgParagraph from "./home/BgParagraph.vue";
 import InfoSquares from "./home/InfoSquares.vue";
 import Footer from "./layout/Footer.vue";
 import axios from "axios";
+import Internal from "./Internal.vue";
 
 export default {
     components: {
@@ -34,12 +41,14 @@ export default {
         Header,
         Hero,
         FiftyFifty,
-        Footer
+        Footer,
+        Internal
     },
     data() {
         return {
             home: '',
-            pages: ''
+            pages: '',
+            onHomePage: true
         }
     },
     mounted() {
@@ -58,8 +67,13 @@ export default {
                 console.error('Error ', error);
             });
     },
+    methods: {
+        handlePageClick(pageName) {
+            console.log('received', pageName)
+            this.onHomePage = false;
 
-
+        }
+    }
 }
 
 </script>

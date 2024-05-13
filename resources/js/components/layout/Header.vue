@@ -10,11 +10,12 @@
                     </a>
                 </div>
                 <ul class="w-3/4 flex justify-end list-none">
-                    <li class="text-white cursor-pointer" v-for="(page, pageIndex) in pages">
-                        <a :href="page?.slug" :class="hover ? 'text-black' : 'text-white'" class="hidden xl:flex mx-2 2xl:mx-4"
-                           :key="pageIndex">{{ page.name }} </a>
+                    <li class="text-white cursor-pointer" v-for="(page, pageIndex) in pages" :key="pageIndex">
+                        <a   :class="hover ? 'text-black' : 'text-white'"
+                           class="hidden xl:flex mx-2 2xl:mx-4" @click="handlePageClick(page.name)">
+                            {{ page.name }}
+                        </a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -37,12 +38,18 @@ export default {
         axios.get('/pages')
             .then(response => {
                 this.pages = response.data
-
             })
             .catch(error => {
                 console.error('Error ', error);
             });
     },
+    methods: {
+        handlePageClick(pageName) {
+            // Do something with the page name, for example:
+            console.log('Clicked page:', pageName);
+            this.$emit('emitPageName', pageName);
+        }
+    }
 }
 </script>
 
