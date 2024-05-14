@@ -43,7 +43,7 @@ export default {
 }
 
 .parallax-background {
-    background-image: url('/images/bg.jpg');
+    /*background-image: url('/images/bg.jpg');*/
     min-height: 500px;
     width: 100%;
     /* Create the parallax scrolling effect */
