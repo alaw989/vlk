@@ -10,5 +10,5 @@ Route::get('/pages', [PageController::class, 'getPages'])
     ->name('pages.index');
 
 // Wildcard route for dynamic pages
-//Route::get('/pages/{slug}', [PageController::class, 'getPage'])
-//    ->name('pages.show');
+Route::get('/{slug}', [PageController::class, 'getPage'])
+    ->name('pages.show');

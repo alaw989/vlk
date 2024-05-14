@@ -17,21 +17,21 @@ class PageController extends Controller
         return response()->json($pages);
     }
 
-//    public function getPage($slug)
-//    {
-//        // Retrieve the page content based on the slug
-//        $page = Page::where('slug', $slug)->firstOrFail();
-//        $pages = Page::select('id', 'name', 'slug')->get();
-//
-//        $page_data = [
-//            'page' => $page,
-//            'pages' => $pages
-//        ];
-//
-//        // You can return a view passing the page content to it
-//        return response()->json($page_data);
-//
-//    }
+    public function getPage($slug)
+    {
+        // Retrieve the page content based on the slug
+        $page = Page::where('slug', $slug)->firstOrFail();
+        $pages = Page::select('id', 'name', 'slug')->get();
+
+        $page_data = [
+            'page' => $page,
+            'pages' => $pages
+        ];
+
+        // You can return a view passing the page content to it
+        return response()->json($page_data);
+
+    }
 
 }
 

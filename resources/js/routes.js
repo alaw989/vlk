@@ -1,17 +1,17 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'; // Change to createWebHistory for non-memory history mode
 
 // Import your components
-import HomePage from './components/App.vue'
-import Internal from './components/Internal.vue';
+import HomePage from './components/App.vue';
+import Internal from './components/InternalHero.vue';
 
 const routes = [
-    { path: '/', component: HomePage },
-    { path: '/:slug', component: Internal }
+    { path: '/', name: 'home', component: HomePage }, // Add name for the home route
+    { path: '/:slug', name: 'page', component: Internal, props: true } // Add name for the page route and use props: true to pass slug as a prop
 ];
 
 const router = createRouter({
-    history: createMemoryHistory(),
-    routes,
-})
+    history: createWebHistory(), // Change to createWebHistory for non-memory history mode
+    routes
+});
 
 export default router;

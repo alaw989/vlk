@@ -5,16 +5,19 @@
         <div class="w-full max-w-[75%]">
             <div class="flex items-center justify-between h-full px-5 sm:px-10 max-w-">
                 <div class="w-1/4">
-                    <a href="">
+                    <!-- Use router-link instead of anchor tag -->
+                    <router-link :to="{ name: 'home' }">
                         <img class="hidden xl:block max-w-[250px] cursor-pointer" :src="imageUrl" alt="Example Image">
-                    </a>
+                    </router-link>
                 </div>
                 <ul class="w-3/4 flex justify-end list-none">
                     <li class="text-white cursor-pointer" v-for="(page, pageIndex) in pages" :key="pageIndex">
-                        <a   :class="hover ? 'text-black' : 'text-white'"
-                           class="hidden xl:flex mx-2 2xl:mx-4" @click="handlePageClick(page.name)">
+                        <!-- Use router-link instead of anchor tag -->
+                        <router-link :to="{ name: 'page', params: { slug: page.slug } }"
+                                     :class="hover ? 'text-black' : 'text-white'"
+                                     class="hidden xl:flex mx-2 2xl:mx-4">
                             {{ page.name }}
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -26,7 +29,7 @@
 import axios from "axios";
 
 export default {
-    name: "Header.vue",
+    name: "Header",
     data() {
         return {
             pages: [],
@@ -43,13 +46,6 @@ export default {
                 console.error('Error ', error);
             });
     },
-    methods: {
-        handlePageClick(pageName) {
-            // Do something with the page name, for example:
-            console.log('Clicked page:', pageName);
-            this.$emit('emitPageName', pageName);
-        }
-    }
 }
 </script>
 
