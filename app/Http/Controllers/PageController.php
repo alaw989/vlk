@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Models\Page;
+use Illuminate\Support\Facades\Request;
 
 class PageController extends Controller
 {
@@ -12,9 +13,14 @@ class PageController extends Controller
     }
 
     public function getPages() {
-
         $pages = Page::select('id', 'name', 'slug', 'body', 'info_squares')->get();
-        return response()->json($pages);
+
+        // Check if the request wants JSON response
+        if(Request::wantsJson()) {
+            return response()->json($pages);
+        } else {
+            return view('app');
+        }
     }
 
     public function getPage($slug)
@@ -28,10 +34,12 @@ class PageController extends Controller
             'pages' => $pages
         ];
 
-        // You can return a view passing the page content to it
-        return response()->json($page_data);
-
+        // Check if the request wants JSON response
+        if(Request::wantsJson()) {
+            return response()->json($page_data);
+        } else {
+            return view('app');
+        }
     }
-
 }
 

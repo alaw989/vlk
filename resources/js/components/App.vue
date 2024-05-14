@@ -23,9 +23,9 @@
 
         <div v-else>
             <!-- Component for internal pages -->
-            <div class="relative h-[75vh]">
+            <div class="relative">
                 <Header/>
-                <InternalHero/>
+                <SectionContact v-if="$route.path === '/contact'"></SectionContact>
             </div>
             <div class="relative mt-[6rem] ">
                 <Footer :pages="pages"/>
@@ -43,6 +43,7 @@ import InfoSquares from "./home/InfoSquares.vue";
 import Footer from "./layout/Footer.vue";
 import axios from "axios";
 import InternalHero from "./InternalHero.vue";
+import SectionContact from "./internal/SectionContact.vue";
 
 export default {
     components: {
@@ -52,7 +53,8 @@ export default {
         Hero,
         FiftyFifty,
         Footer,
-        InternalHero
+        InternalHero,
+        SectionContact
     },
     data() {
         return {
@@ -79,7 +81,7 @@ export default {
     methods: {
         handlePageClick(pageName) {
             console.log('received', pageName)
-            // Optionally, you can add logic here to handle page navigation
+
         },
         isHomePage(path) {
             // Check if the current route is the home page

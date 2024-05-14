@@ -5,8 +5,8 @@ import HomePage from './components/App.vue';
 import Internal from './components/InternalHero.vue';
 
 const routes = [
-    { path: '/', name: 'home', component: HomePage }, // Add name for the home route
-    { path: '/:slug', name: 'page', component: Internal, props: true } // Add name for the page route and use props: true to pass slug as a prop
+    { path: '/', name: 'home', }, // Add name for the home route
+    { path: '/:slug', name: 'page', props: true } // Add name for the page route and use props: true to pass slug as a prop
 ];
 
 const router = createRouter({
